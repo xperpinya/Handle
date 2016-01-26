@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="container">
-            <h1>List of Beers</h1>
+            <h1>List</h1>
             <div id="beer-list">
             </div>
             
@@ -24,7 +24,7 @@
                 <ul>
                     <!--the "each" block function is built into handlebars to iterate through the current context-->
                     {{#each beers}}
-                        <li>{{this.name}}<br />
+                        <li><b>{{this.name}}</b><br />
                             {{this.type}}<br />
                             <a href={{this.website}}>{{this.website}}</a><br />
                         </li>
