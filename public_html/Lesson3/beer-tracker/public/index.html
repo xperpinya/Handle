@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Beer List</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="dpd.js"></script>
+		<script type="text/javascript" src="js/beers.js"></script>
+		<script src="js/handlebars-v4.0.4.js"></script>
+	</head>
+
+	<body>
+		<div id="beer-list">
+			
+		</div>
+		<div id="hbs-beer-list" class="panel-group">
+			
+		</div>
+		<script id="beer-template" type="text/x-handlebars-template">
+			{{#each myBeers}}
+				<p>{{this.name}}</p>
+			{{/each}}
+		</script>
+	</body>
+</html>

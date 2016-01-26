@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Samples of Cool Stuff using Handlebars.js</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+              <!-- Require after template?-->
+      <script src="js/handlebars-v4.0.4.js"></script>
+      <script src="js/dropdownSample.js"></script>
+	</head>
+    <body>
+        <div class="container">
+            <div id="menuItems">
+            </div>
+            <script id="beerDropdownTemplate" type="text/x-handlebars-template">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Dropdown Example
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        {{#each beers}}
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{name}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </script>
+            
+        </div>   
+    </body>
+</html>

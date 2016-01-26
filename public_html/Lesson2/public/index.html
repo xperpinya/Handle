@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Handlebars.js Tutorial For Beginners</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+              <!-- Require after template?-->
+      <script src="js/handlebars-v4.0.4.js"></script>
+      <script src="js/beers.js"></script>
+	</head>
+	<body>
+		<div class="container">
+            <div class="jumbotron">
+                <h1>List of Beers</h1>
+                <button id="addButton" type="button" class="btn btn-success">Add a Beer <span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+            
+            <div id="beer-list" class="panel-group">
+            </div>
+            
+            <!--Make sure that the type for the script that contains a handlebars template is not the typical "text/javascript"
+                 It needs to be "text/x-handlebars-template"-->
+                 
+            <!-- Lesson1 was a little boring on the front end.  Let's make it a little easier on the eyes
+                with some Bootstrap and jQuery -->
+            <script id="beer-template" type="text/x-handlebars-template">
+                    <!--the "each" block function is built into handlebars to iterate through the current context-->
+                    {{#each beers}}
+                        <div class="panel panel-primary">
+                            <div data-panelHeadingId="panel-heading-{{this.name}}" class="panel-heading">{{this.name}} <span class="glyphicon glyphicon-menu-down"></span></div>
+                            <div id="panel-heading-{{this.name}}" class="panel-body">
+                                Type: {{this.type}}<br />
+                                <a href="{{this.website}}" target="_blank">Go to Website</a>
+                                <button type="button" class="btn btn-default">More Info   <span class="glyphicon glyphicon-info-sign"></span></button>
+                            </div>
+                        </div>
+                    {{/each}}
+            </script>
+		</div>
+	</body>
+
+</html>

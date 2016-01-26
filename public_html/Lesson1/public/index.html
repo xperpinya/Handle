@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Handlebars.js Tutorial For Beginners</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+              <!-- Require after template?-->
+      <script src="js/handlebars-v4.0.4.js"></script>
+      <script src="js/beers.js"></script>
+	</head>
+	<body>
+		<div class="container">
+            <h1>List of Beers</h1>
+            <div id="beer-list">
+            </div>
+            
+            <!--Make sure that the type for the script that contains a handlebars template is not the typical "text/javascript"
+                 It needs to be "text/x-handlebars-template"-->
+                 
+            <script id="beer-template" type="text/x-handlebars-template">
+                <ul>
+                    <!--the "each" block function is built into handlebars to iterate through the current context-->
+                    {{#each beers}}
+                        <li>{{this.name}}<br />
+                            {{this.type}}<br />
+                            <a href={{this.website}}>{{this.website}}</a><br />
+                        </li>
+                    {{/each}}
+                </ul>
+            </script>
+		</div>
+	</body>
+
+</html>
